@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co.in - Coin Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+    <!-- menu -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">Co.in</div>
+
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="market.html">market</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">Login</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- login -->
+
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div class="tab-buttons">
+                <button id="loginTab" onclick="showForm('login')" class="active">Login</button>
+                <button id="signupTab" onclick="showForm('signup')">Sign Up</button>
+            </div>
+
+            <form id="loginForm" class="form-content">
+                <h2>Login</h2>
+                <div class="input-box">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="glow-button">Login</button>
+            </form>
+
+            <form id="signupForm" class="form-content hidden">
+                <h2>Create Account</h2>
+                <div class="input-box">
+                    <i class="fas fa-user-plus"></i>
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="glow-button">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            setTimeout(function () {
+                const popup = document.getElementById("loginPopup");
+                popup.style.display = "flex";
+                setTimeout(() => popup.classList.add("show"), 10);
+            }, 1500);
+        };
+
+        function closePopup() {
+            const popup = document.getElementById("loginPopup");
+            popup.classList.remove("show");
+            setTimeout(() => popup.style.display = "none", 1000);
+        }
+
+        function showForm(formType) {
+            const loginForm = document.getElementById("loginForm");
+            const signupForm = document.getElementById("signupForm");
+            const loginTab = document.getElementById("loginTab");
+            const signupTab = document.getElementById("signupTab");
+
+            if (formType === 'login') {
+                loginForm.classList.remove("hidden");
+                signupForm.classList.add("hidden");
+                loginTab.classList.add("active");
+                signupTab.classList.remove("active");
+            } else {
+                signupForm.classList.remove("hidden");
+                loginForm.classList.add("hidden");
+                signupTab.classList.add("active");
+                loginTab.classList.remove("active");
+            }
+        }
+
+    </script>
+
+    <!-- banner -->
+
+    <div class="banner">
+        <img src="ChatGPT Image May 14, 2025, 11_55_59 AM.png">
+    </div>
+
+    <!-- sale page -->
+
+    <div className="metallic-box">
+        <h1 className="metallic-text">Sales of the Month</h1>
+    </div>
+
+    <!-- product card -->
+
+    <div class="grid-container">
+        <article class="product-card" tabindex="0" role="group" aria-roledescription="card"
+            aria-describedby="desc1-1 price1-1">
+            <div class="sale-ribbon" aria-hidden="true">Sale</div>
+            <div class="product-image-wrapper">
+                <img src="coin1.png" alt="Elegant Old Coin" class="product-image" />
+            </div>
+            <div class="product-info">
+                <h2 id="desc1-1" class="product-title">Elegant Old Coin</h2>
+                <div class="rating-stars" aria-label="Rating: 5 out of 5v   stars" role="img">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                </div>
+                <p class="product-description">A rare and valuable coin from the golden ages, perfect for collectors and
+                    enthusiasts.</p>
+                <p id="price1-1" class="product-price">$899.99</p>
+                <button class="btn-buy" aria-label="Buy Elegant Old Coin now">Buy Now</button>
+            </div>
+        </article>
+        <article class="product-card" tabindex="0" role="group" aria-roledescription="card"
+            aria-describedby="desc1-2 price1-2">
+            <div class="sale-ribbon" aria-hidden="true">Sale</div>
+            <div class="product-image-wrapper">
+                <img src="coin2.png" alt="Elegant Old Coin" class="product-image">
+            </div>
+            <div class="product-info">
+                <h2 id="desc1-2" class="product-title">Elegant Old Coin</h2>
+                <div class="rating-stars" aria-label="Rating: 5 out of 5 stars" role="img">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                </div>
+                <p class="product-description">A rare and valuable coin from the golden ages, perfect for collectors and
+                    enthusiasts.</p>
+                <p id="price1-2" class="product-price">$999.99</p>
+                <button class="btn-buy" aria-label="Buy Elegant Old Coin now">Buy Now</button>
+            </div>
+        </article>
+        <article class="product-card" tabindex="0" role="group" aria-roledescription="card"
+            aria-describedby="desc1-3 price1-3">
+            <div class="sale-ribbon" aria-hidden="true">Sale</div>
+            <div class="product-image-wrapper">
+                <img src="coin3.png" alt="Elegant Old Coin" class="product-image" />
+            </div>
+            <div class="product-info">
+                <h2 id="desc1-3" class="product-title">Elegant Old Coin</h2>
+                <div class="rating-stars" aria-label="Rating: 5 out of 5 stars" role="img">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                </div>
+                <p class="product-description">A rare and valuable coin from the golden ages, perfect for collectors and
+                    enthusiasts.</p>
+                <p id="price1-3" class="product-price">$1100.00</p>
+                <button class="btn-buy" aria-label="Buy Elegant Old Coin now">Buy Now</button>
+            </div>
+        </article>
+        <article class="product-card" tabindex="0" role="group" aria-roledescription="card"
+            aria-describedby="desc1-4 price1-4">
+            <div class="sale-ribbon" aria-hidden="true">Sale</div>
+            <div class="product-image-wrapper">
+                <img src="coin4.png" alt="Elegant Old Coin" class="product-image" />
+            </div>
+            <div class="product-info">
+                <h2 id="desc1-4" class="product-title">Elegant Old Coin</h2>
+                <div class="rating-stars" aria-label="Rating: 5 out of 5 stars" role="img">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                </div>
+                <p class="product-description">A rare and valuable coin from the golden ages, perfect for collectors and
+                    enthusiasts.</p>
+                <p id="price1-4" class="product-price">$799.99</p>
+                <button class="btn-buy" aria-label="Buy Elegant Old Coin now">Buy Now</button>
+            </div>
+        </article>
+        <article class="product-card" tabindex="0" role="group" aria-roledescription="card"
+            aria-describedby="desc1-5 price1-5">
+            <div class="sale-ribbon" aria-hidden="true">Sale</div>
+            <div class="product-image-wrapper">
+                <img src="coin5.png" alt="Elegant Old Coin" class="product-image" />
+            </div>
+            <div class="product-info">
+                <h2 id="desc1-5" class="product-title">Elegant Old Coin</h2>
+                <div class="rating-stars" aria-label="Rating: 5 out of 5 stars" role="img">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                </div>
+                <p class="product-description">A rare and valuable coin from the golden ages, perfect for collectors and
+                    enthusiasts.</p>
+                <p id="price1-5" class="product-price">$1099.99</p>
+                <button class="btn-buy" aria-label="Buy Elegant Old Coin now">Buy Now</button>
+            </div>
+        </article>
+        <article class="product-card" tabindex="0" role="group" aria-roledescription="card"
+            aria-describedby="desc1-6 price1-6">
+            <div class="sale-ribbon" aria-hidden="true">Sale</div>
+            <div class="product-image-wrapper">
+                <img src="coin6.png" alt="Elegant Old Coin" class="product-image" />
+            </div>
+            <div class="product-info">
+                <h2 id="desc1-6" class="product-title">Elegant Old Coin</h2>
+                <div class="rating-stars" aria-label="Rating: 5 out of 5 stars" role="img">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                    <svg viewBox="0 0 24 24" style="opacity:0.4;">
+                        <path
+                            d="M12 .587l3.668 7.568L24 9.75l-6 5.855L19.335 24 12 20.01 4.665 24 6 15.605 0 9.75l8.332-1.595z" />
+                    </svg>
+                </div>
+                <p class="product-description">A rare and valuable coin from the golden ages, perfect for collectors and
+                    enthusiasts.</p>
+                <p id="price1-6" class="product-price">$799.99</p>
+                <button class="btn-buy" aria-label="Buy Elegant Old Coin now">Buy Now</button>
+            </div>
+        </article>
+    </div>
+
+    <!-- trading disclaimer -->
+
+   <div class="animated-announcement" role="region" aria-label="Exciting Announcement">
+  <div class="announcement-content">
+    <i class="fa-solid fa-coins coin-icon" aria-hidden="true"></i>
+    <div class="announcement-text">
+      <div class="announcement-title">🔥 Trade & Earn with <span class="highlight">co.in</span>!</div>
+      <div class="announcement-subtitle">Your trusted platform for rare coin trading & rewards.</div>
+    </div>
+  </div>
+</div>
+
+
+<section class="why-choose-us">
+  <h2 class="section-title">Why Collectors Trust <span class="gold">Co.in</span></h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fas fa-shield-alt feature-icon"></i>
+      <h3 class="feature-title">Verified Authenticity</h3>
+      <p>Every coin undergoes expert inspection to ensure it’s 100% real and historic.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-globe-asia feature-icon"></i>
+      <h3 class="feature-title">Global Marketplace</h3>
+      <p>Buy and sell coins with trusted collectors from around the world—fast and secure.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-lock feature-icon"></i>
+      <h3 class="feature-title">Secure Transactions</h3>
+      <p>End-to-end encrypted payments ensure your data and money are safe, always.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-star feature-icon"></i>
+      <h3 class="feature-title">Rated 4.9/5</h3>
+      <p>Loved by thousands of coin enthusiasts and expert collectors globally.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="testimonials">
+  <h2 class="section-title">What Our Collectors Are Saying</h2>
+  <div class="testimonial-wrapper">
+    <div class="testimonial-box">
+      <p class="testimonial-text">"Co.in helped me find a 17th-century coin I’d been chasing for years. Their platform is a goldmine for collectors!"</p>
+      <div class="testimonial-author">— Rahul Jain, New Delhi 🇮🇳</div>
+    </div>
+    <div class="testimonial-box">
+      <p class="testimonial-text">"The trust and transparency here are unmatched. Every deal I’ve made has been smooth and secure."</p>
+      <div class="testimonial-author">— Sarah Parker, London 🇬🇧</div>
+    </div>
+    <div class="testimonial-box">
+      <p class="testimonial-text">"Their coin verification service saved me from a scam. Highly recommended for serious collectors!"</p>
+      <div class="testimonial-author">— Vikram Rao, Bengaluru 🇮🇳</div>
+    </div>
+  </div>
+</section>
+
+<section class="collector-spotlight">
+  <h2 class="section-title">🌟 Collector Spotlight</h2>
+  <div class="collector-profile">
+    <img src="coin collecter.png" alt="Collector Photo" class="collector-img">
+    <div class="collector-details">
+      <h3>Neha Sharma</h3>
+      <p>"Coins are history frozen in time. Co.in helped me expand my collection with verified ancient gems from around the world."</p>
+      <span class="collector-title">Top Verified Seller – 240+ Coins Listed</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="coin-news">
+  <h2 class="section-title">📰 Latest from the Coin World</h2>
+  <div class="news-grid">
+    <div class="news-card">
+      <h4>🪙 Mughal Empire Coin Sells for ₹3.2 Cr</h4>
+      <p>A rare gold coin from the reign of Akbar was auctioned at record-breaking value.</p>
+    </div>
+    <div class="news-card">
+      <h4>🌍 Top 5 Global Coins in Demand Right Now</h4>
+      <p>From British Sovereigns to Ottoman silvers — here’s what buyers want in 2025.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="trusted-by">
+  <h2 class="section-title">🔒 Trusted By</h2>
+  <div class="brand-logos">
+    <img src="logo1.png" alt="Heritage Auctions">
+    <img src="logo2.png" alt="NumisTrust">
+    <img src="logo3.png" alt="Antique World">
+    <img src="logo4.png" alt="RareCoin Vault">
+  </div>
+</section>
+
+
+<section class="market-stats">
+  <h2 class="section-title">📈 Live Market Stats</h2>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <h3>$12.6M+</h3>
+      <p>Total Coin Sales</p>
+    </div>
+    <div class="stat-box">
+      <h3>89,450+</h3>
+      <p>Coins Traded</p>
+    </div>
+    <div class="stat-box">
+      <h3>123</h3>
+      <p>Live Auctions</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="social-feed">
+  <h2 class="section-title">📸 Follow Us On Instagram</h2>
+  <div class="social-grid">
+    <img src="coin7.jpeg" alt="Coin Showcase">
+    <img src="coin8.webp" alt="Collector Highlight">
+    <img src="coin9.webp" alt="Auction Live">
+    <img src="coin10.webp" alt="Coin of the Day">
+  </div>
+</section>
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section" style="margin-left: -50px;">
+
+                <h4 class="footer-title">About Us</h4>
+
+                <p class="footer-text">
+                    At *co.in*, we are a leading platform for buying and selling rare, historical, and collec tible
+                    coins. Whether you are a seasoned collector or a newcomer to numismatics, we provide a trusted
+                    marketplace for all your coin trading needs.
+                </p>
+
+                <p class="footer-text">
+                    With an emphasis on authenticity and customer satisfaction, our goal is to bring together buyers and
+                    sellers from across the globe to exchange valuable coins with ease and security.
+                </p>
+
+            </div>
+
+            <div class="footer-section">
+
+                <h4 class="footer-title">Quick Links</h4>
+
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">Shop Coins</a></li>
+                    <li><a href="#" class="footer-link">Sell Coins</a></li>
+                    <li><a href="#" class="footer-link">Market Trends</a></li>
+                    <li><a href="#" class="footer-link">FAQ</a></li>
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+
+                <h4 class="footer-title">Contact Information</h4>
+
+                <p class="footer-text">
+                    <strong>Email:</strong> support@co.in<br>
+                    <strong>Phone:</strong> +1 800 123 4567<br>
+                    <strong>Address:</strong> 123 Coin St., Currency City, Global
+                </p>
+
+            </div>
+
+            <div class="footer-section">
+
+                <h4 class="footer-title">Follow Us</h4>     
+
+                <ul class="footer-socials">
+                    <li><a href="https://www.facebook.com/" class="footer-social-link">Facebook</a></li>
+                    <li><a href="https://x.com/" class="footer-social-link">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/" class="footer-social-link">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/feed/" class="footer-social-link">LinkedIn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title" style="margin-left: 600px; margin-top: -150px;">Stay Updated</h4>
+                <p class="footer-text" style="margin-left: 600px;">Sign up for our newsletter to get the latest updates
+                    on coin collections, sales, and promotions.</p>
+                <form class="footer-newsletter">
+                    <input type="email" class="footer-input" placeholder="Enter your email" required>
+                    <button type="submit" class="footer-button">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-bottom-text">
+                © 2025 *co.in* - All Rights Reserved | <a href="#" class="footer-link2">Privacy Policy</a>
+        </div>
+
+    </footer>
+</body>
+
+</html>

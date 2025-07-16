@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co.in - Coin Website</title>
+    <link rel="stylesheet" href="market.css">
+</head>
+
+<body>
+
+    <!-- menu -->
+
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Co.in</div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">market</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>    
+    </header>
+ 
+  <section class="product-showcase">
+  <h2>🪙 Available Coins for Sale</h2>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="coin1.jpg" alt="Ancient Roman Coin">
+      <h3>Ancient Roman Denarius</h3>
+      <p>75 BC • Silver • Italy</p>
+      <span>₹9,499</span>
+      <div class="product-actions">
+        <button class="buy-btn">Buy Now</button>
+        <button class="details-btn">View Details</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="coin2.jpg" alt="Mughal Gold Coin">
+      <h3>Mughal Gold Mohur</h3>
+      <p>1600s • Gold • Akbar Era</p>
+      <span>₹45,000</span>
+      <div class="product-actions">
+        <button class="buy-btn">Buy Now</button>
+        <button class="details-btn">View Details</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="coin3.jpg" alt="British Colonial Penny">
+      <h3>British Penny</h3>
+      <p>1943 • Bronze • India</p>
+      <span>₹1,250</span>
+      <div class="product-actions">
+        <button class="buy-btn">Buy Now</button>
+        <button class="details-btn">View Details</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="filter-bar">
+  <div class="filter-container">
+    <select class="filter-select">
+      <option selected disabled>🔎 Filter by Era</option>
+      <option>Ancient</option>
+      <option>Medieval</option>
+      <option>Colonial</option>
+      <option>Modern</option>
+    </select>
+
+    <select class="filter-select">
+      <option selected disabled>🧱 Filter by Material</option>
+      <option>Gold</option>
+      <option>Silver</option>
+      <option>Bronze</option>
+      <option>Copper</option>
+    </select>
+
+    <select class="filter-select">
+      <option selected disabled>💰 Sort by</option>
+      <option>Price: Low to High</option>
+      <option>Price: High to Low</option>
+      <option>Newest Listings</option>
+    </select>
+
+    <input type="text" placeholder="🔍 Search coins..." class="search-bar">
+  </div>
+</section>
+
+
+<section class="sell-coin-section">
+  <div class="sell-coin-box">
+    <div class="sell-text">
+      <h2>📤 Want to Sell Your Coin?</h2>
+      <p>Join thousands of collectors by listing your rare and valuable coins on Co.in. It's fast, secure, and free to get started!</p>
+      <a href="sell.html" class="sell-btn">List Your Coin</a>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- Coin Detail Modal -->
+<div id="coinModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img src="coin1.jpg" alt="Coin Image">
+    <h3>Ancient Roman Denarius</h3>
+    <p><strong>Era:</strong> 75 BC</p>
+    <p><strong>Material:</strong> Silver</p>
+    <p><strong>Origin:</strong> Italy</p>
+    <p><strong>Description:</strong> A beautifully preserved Roman silver coin used during Julius Caesar’s time.</p>
+    <p><strong>Price:</strong> ₹9,499</p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+</div>
+
+
+<script>
+  function openModal() {
+    document.getElementById('coinModal').style.display = 'flex';
+  }
+
+  function closeModal() {
+    document.getElementById('coinModal').style.display = 'none';
+  }
+
+  // Optional: Close modal when clicking outside
+  window.onclick = function(e) {
+    const modal = document.getElementById('coinModal');
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+</script>
+
+<div id="cart-panel" class="cart-panel">
+  <h3>Your Cart</h3>
+  <div id="cart-items"></div>
+  <div class="cart-footer">
+    <span>Total: ₹<span id="cart-total">0</span></span>
+    <button onclick="checkout()">Checkout</button>
+  </div>
+</div>
+
+
+<script>
+  let cart = [];
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartUI();
+    document.getElementById('cart-panel').style.display = 'block';
+  }
+
+  function updateCartUI() {
+    const itemsContainer = document.getElementById('cart-items');
+    const count = document.getElementById('cart-count');
+    const total = document.getElementById('cart-total');
+    itemsContainer.innerHTML = '';
+    let totalPrice = 0;
+
+    cart.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.innerHTML = `<p>🪙 ${item.name} - ₹${item.price}</p>`;
+      itemsContainer.appendChild(div);
+      totalPrice += item.price;
+    });
+
+    count.innerText = cart.length;
+    total.innerText = totalPrice;
+  }
+
+  function toggleCart() {
+    const cartPanel = document.getElementById('cart-panel');
+    cartPanel.style.display = cartPanel.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function checkout() {
+    alert('✅ This is a demo checkout! In future, you can integrate Razorpay, PayPal, etc.');
+  }
+</script>
+
+
+<section class="collectors-choice">
+  <h2>🌟 Collector’s Choice</h2>
+  <p>Handpicked by coin enthusiasts and history lovers — these treasures deserve a spotlight.</p>
+  <div class="choice-grid">
+
+    <div class="choice-card">
+      <img src="collector1.jpg" alt="Collector Coin 1">
+      <h3>Ancient Spartan Drachma</h3>
+      <p><span>⭐ 4.9/5</span> • Silver • 500 BC</p>
+      <button>View Details</button>
+    </div>
+
+    <div class="choice-card">
+      <img src="collector2.jpg" alt="Collector Coin 2">
+      <h3>British Sovereign Gold</h3>
+      <p><span>⭐ 5.0/5</span> • Gold • 1918</p>
+      <button>View Details</button>
+    </div>
+
+    <div class="choice-card">
+      <img src="collector3.jpg" alt="Collector Coin 3">
+      <h3>Mughal Emperor Akbar Coin</h3>
+      <p><span>⭐ 4.8/5</span> • Bronze • 1600s</p>
+      <button>View Details</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+
+                <h4 class="footer-title">About Us</h4>
+
+                <p class="footer-text">
+                    At *co.in*, we are a leading platform for buying and selling rare, historical, and collectible
+                    coins. Whether you are a seasoned collector or a newcomer to numismatics, we provide a trusted
+                    marketplace for all your coin trading needs.
+                </p>
+
+                <p class="footer-text">
+                    With an emphasis on authenticity and customer satisfaction, our goal is to bring together buyers and
+                    sellers from across the globe to exchange valuable coins with ease and security.
+                </p>
+
+            </div>
+
+            <div class="footer-section">
+
+                <h4 class="footer-title">Quick Links</h4>
+
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Home</a></li>
+                    <li><a href="#" class="footer-link">Shop Coins</a></li>
+                    <li><a href="#" class="footer-link">Sell Coins</a></li>
+                    <li><a href="#" class="footer-link">Market Trends</a></li>
+                    <li><a href="#" class="footer-link">FAQ</a></li>
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+
+                <h4 class="footer-title">Contact Information</h4>
+
+                <p class="footer-text">
+                    <strong>Email:</strong> support@co.in<br>
+                    <strong>Phone:</strong> +1 800 123 4567<br>
+                    <strong>Address:</strong> 123 Coin St., Currency City, Global
+                </p>
+
+            </div>
+
+            <div class="footer-section">
+
+                <h4 class="footer-title">Follow Us</h4>
+
+                <ul class="footer-socials">
+                    <li><a href="#" class="footer-social-link">Facebook</a></li>
+                    <li><a href="#" class="footer-social-link">Twitter</a></li>
+                    <li><a href="#" class="footer-social-link">Instagram</a></li>
+                    <li><a href="#" class="footer-social-link">LinkedIn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="footer-title" style="margin-left: 600px; margin-top: -150px;">Stay Updated</h4>
+                <p class="footer-text" style="margin-left: 600px;">Sign up for our newsletter to get the latest updates
+                    on coin collections, sales, and promotions.</p>
+                <form class="footer-newsletter">
+                    <input type="email" class="footer-input" placeholder="Enter your email" required>
+                    <button type="submit" class="footer-button">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-bottom-text">
+                © 2025 *co.in* - All Rights Reserved | <a href="#" class="footer-link2">Privacy Policy</a>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
